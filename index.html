@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>م. جلال حمودة | HSE & Digital Solutions</title>
+
+  <meta name="description"
+        content="م. جلال حمودة - HSE, Administrative Security, HR Systems, AppSheet and Digital Solutions">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #173b63;
+      --primary-dark: #0f2742;
+      --secondary: #2563eb;
+      --light: #f4f7fb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(37,99,235,.35), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(30,64,175,.25), transparent 30%),
+        linear-gradient(135deg, #0b1728, #173b63);
+
+      color: white;
+      text-align: center;
+      padding: 55px 20px 85px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -45px;
+      left: -5%;
+      width: 110%;
+      height: 90px;
+      background: var(--light);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .profile-wrapper {
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,.95);
+      background: #dbe3ec;
+      box-shadow: 0 12px 35px rgba(0,0,0,.30);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 33px;
+      margin-bottom: 4px;
+    }
+
+    .hero h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 18px;
+      font-weight: normal;
+      opacity: .94;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      opacity: .82;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================== */
+
+    .container {
+      width: 100%;
+      max-width: 920px;
+      margin: -20px auto 50px;
+      padding: 0 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    .section {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 7px 25px rgba(0,0,0,.06);
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 20px;
+      border-right: 4px solid var(--secondary);
+      padding-right: 12px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      color: #4b5563;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    /* =========================
+       HIGHLIGHTS
+    ========================== */
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .highlight {
+      text-align: center;
+      padding: 20px 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .highlight-icon {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .highlight h3 {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    .highlight p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #eef4ff;
+      color: var(--primary);
+      padding: 9px 15px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.07);
+    }
+
+    .card-icon {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .btn {
+      display: inline-block;
+      margin-top: 13px;
+      padding: 8px 16px;
+      background: var(--secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 9px;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      opacity: .88;
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       CERTIFICATES
+    ========================== */
+
+    .certificate {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .certificate-icon {
+      width: 58px;
+      height: 58px;
+      min-width: 58px;
+      border-radius: 14px;
+      background: #eaf2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .certificate-info {
+      flex: 1;
+    }
+
+    .certificate-info h3 {
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .certificate-info p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       CV
+    ========================== */
+
+    .cv-box {
+      text-align: center;
+    }
+
+    .cv-box p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .cv-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .cv-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       SOCIAL
+    ========================== */
+
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .social:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+
+    .facebook {
+      background: #1877f2;
+    }
+
+    .linkedin {
+      background: #0a66c2;
+    }
+
+    .twitter {
+      background: #111827;
+    }
+
+    .phone {
+      background: #16a34a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      padding: 25px 15px 35px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .developer {
+      color: var(--primary);
+      font-weight: bold;
+      margin: 3px 0;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding: 40px 15px 70px;
+      }
+
+      .profile-img {
+        width: 125px;
+        height: 125px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .hero h2 {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 20px 15px;
+      }
+
+      .section-title {
+        font-size: 20px;
+      }
+
+      .highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .social-links {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       PROFILE
+  =================================================== -->
+
+  <header class="hero">
+
+    <div class="profile-wrapper">
+
+      <!--
+        ضع صورتك هنا
+        اسم الصورة يجب أن يكون:
+        profile.jpg
+
+        وتكون في نفس مكان index.html
+      -->
+
+      <img
+        class="profile-img"
+        src="profile.jpg"
+        alt="م. جلال حمودة"
+      >
+
+    </div>
+
+
+    <h1>
+      م. جلال حمودة
+    </h1>
+
+
+    <h2>
+      HSE & Administrative Security
+    </h2>
+
+
+    <p class="tagline">
+      HSE • Administrative Security • HR Systems • AppSheet • Digital Solutions
+    </p>
+
+  </header>
+
+
+
+  <main class="container">
+
+
+    <!-- ==================================================
+         ABOUT
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        👤 نبذة عني
+      </h2>
+
+      <p class="about">
+
+        مهندس متخصص في مجال السلامة والصحة المهنية والبيئة،
+        مع خبرة في تطوير أنظمة وإجراءات السلامة والأمن الإداري،
+        إلى جانب تصميم وتطوير الحلول الرقمية وأنظمة الموارد البشرية.
+
+        أعمل على تطوير بيئة عمل أكثر تنظيمًا وأمانًا من خلال الجمع
+        بين الخبرة الفنية والإدارية والحلول الرقمية، وتحويل
+        الإجراءات التقليدية إلى أنظمة إلكترونية تساعد على
+        تنظيم البيانات، أتمتة العمليات، تحسين المتابعة
+        ورفع كفاءة العمل.
+
+      </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         HIGHLIGHTS
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        ⭐ مجالات العمل الرئيسية
+      </h2>
+
+
+      <div class="highlights">
+
+
+        <div class="highlight">
+
+          <div class="highlight-icon">
+            🦺
+          </div>
+
+          <h3>
+            HSE
+          </h3>
+
+          <p>
+            السلامة والصحة المهنية والبيئة
+          </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+          <div class="highlight-icon">
+            🛡️
+          </div>
+
+          <h3>
+            Administrative Security
+          </h3>
+
+          <p>
+            تطوير وتنظيم منظومة الأمن الإداري
+          </p>
+
+        </div>
+
+
+        <div class="highlight">
+
+          <div class="highlight-icon">
+            💻
+          </div>
+
+          <h3>
+            Digital Solutions
+          </h3>
+
+          <p>
+            تطوير الأنظمة والحلول الرقمية
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SKILLS
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        💼 مجالات الخبرة
+      </h2>
+
+
+      <div class="skills">
+
+        <span class="skill">
+          HSE Management
+        </span>
+
+        <span class="skill">
+          Occupational Safety
+        </span>
+
+        <span class="skill">
+          Environmental Management
+        </span>
+
+        <span class="skill">
+          Administrative Security
+        </span>
+
+        <span class="skill">
+          Security Systems
+        </span>
+
+        <span class="skill">
+          HR Systems
+        </span>
+
+        <span class="skill">
+          Digital Transformation
+        </span>
+
+        <span class="skill">
+          AppSheet
+        </span>
+
+        <span class="skill">
+          Google Sheets
+        </span>
+
+        <span class="skill">
+          Google Apps Script
+        </span>
+
+        <span class="skill">
+          Excel / VBA
+        </span>
+
+        <span class="skill">
+          ISO 45001
+        </span>
+
+        <span class="skill">
+          ISO 14001
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PROJECTS
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        🚀 المشروعات والأنظمة
+      </h2>
+
+
+      <div class="cards">
+
+
+        <!-- HSE -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            🦺
+          </div>
+
+          <h3>
+            تطوير أنظمة السلامة والصحة المهنية
+          </h3>
+
+          <p>
+            تطوير وتنظيم أنظمة وإجراءات السلامة والصحة المهنية
+            والبيئة، ودعم تطبيق متطلبات أنظمة الإدارة.
+          </p>
+
+        </div>
+
+
+
+        <!-- SECURITY -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            🛡️
+          </div>
+
+          <h3>
+            تطوير منظومة الأمن الإداري
+          </h3>
+
+          <p>
+            تطوير وتنظيم إجراءات وأنظمة الأمن الإداري،
+            وتحسين عمليات المتابعة والتنظيم والرقابة.
+          </p>
+
+        </div>
+
+
+
+        <!-- HR -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            👥
+          </div>
+
+          <h3>
+            أنظمة الموارد البشرية
+          </h3>
+
+          <p>
+            تصميم حلول رقمية لتنظيم بيانات الموظفين
+            وحركات الموارد البشرية وتقليل الإجراءات الورقية.
+          </p>
+
+        </div>
+
+
+
+        <!-- LEAVE SYSTEM -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            📱
+          </div>
+
+          <h3>
+            نظام إدارة الإجازات والمأموريات
+          </h3>
+
+          <p>
+            نظام رقمي لإدارة طلبات الإجازات والمأموريات
+            وبدل الورديات، مع مسارات موافقة وإشعارات.
+          </p>
+
+          <!-- ضع رابط AppSheet هنا -->
+
+          <a
+            href="#"
+            class="btn"
+            target="_blank"
+          >
+            فتح النظام
+          </a>
+
+        </div>
+
+
+
+        <!-- NOTIFICATIONS -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            🔔
+          </div>
+
+          <h3>
+            أنظمة الإشعارات والمتابعة
+          </h3>
+
+          <p>
+            أنظمة لتسجيل العمليات وإرسال الإشعارات
+            للمستخدمين المختصين ومتابعة الإجراءات.
+          </p>
+
+        </div>
+
+
+
+        <!-- DASHBOARDS -->
+
+        <div class="card">
+
+          <div class="card-icon">
+            📊
+          </div>
+
+          <h3>
+            التقارير ولوحات المتابعة
+          </h3>
+
+          <p>
+            تصميم حلول لإدارة البيانات وإنشاء التقارير
+            ولوحات المتابعة باستخدام أدوات Google.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CERTIFICATES
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        📜 الشهادات
+      </h2>
+
+
+      <div class="cards">
+
+
+        <div class="card certificate">
+
+          <div class="certificate-icon">
+            📜
+          </div>
+
+          <div class="certificate-info">
+
+            <h3>
+              ISO 45001:2018
+            </h3>
+
+            <p>
+              Occupational Health & Safety
+            </p>
+
+            <a
+              href="certificates/iso45001.pdf"
+              class="btn"
+              target="_blank"
+            >
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card certificate">
+
+          <div class="certificate-icon">
+            📜
+          </div>
+
+          <div class="certificate-info">
+
+            <h3>
+              ISO 14001:2015
+            </h3>
+
+            <p>
+              Environmental Management
+            </p>
+
+            <a
+              href="certificates/iso14001.pdf"
+              class="btn"
+              target="_blank"
+            >
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card certificate">
+
+          <div class="certificate-icon">
+            📜
+          </div>
+
+          <div class="certificate-info">
+
+            <h3>
+              IOSH Managing Safely
+            </h3>
+
+            <p>
+              Occupational Safety
+            </p>
+
+            <a
+              href="certificates/iosh.pdf"
+              class="btn"
+              target="_blank"
+            >
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card certificate">
+
+          <div class="certificate-icon">
+            📜
+          </div>
+
+          <div class="certificate-info">
+
+            <h3>
+              OSHA
+            </h3>
+
+            <p>
+              Occupational Safety
+            </p>
+
+            <a
+              href="certificates/osha.pdf"
+              class="btn"
+              target="_blank"
+            >
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CV
+    =================================================== -->
+
+    <section class="section cv-box">
+
+      <h2 class="section-title">
+        📄 السيرة الذاتية
+      </h2>
+
+      <p>
+        للاطلاع على السيرة الذاتية والخبرات المهنية
+      </p>
+
+
+      <!--
+        ضع ملف السيرة الذاتية في نفس مكان index.html
+        باسم:
+        CV.pdf
+      -->
+
+      <a
+        href="CV.pdf"
+        class="cv-btn"
+        target="_blank"
+      >
+        عرض السيرة الذاتية
+      </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CONTACT
+    =================================================== -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        🔗 تواصل معي
+      </h2>
+
+
+      <div class="social-links">
+
+
+        <a
+          class="social facebook"
+          href="https://www.facebook.com/kotbgala"
+          target="_blank"
+          rel="noopener"
+        >
+          📘 Facebook
+        </a>
+
+
+        <a
+          class="social linkedin"
+          href="https://www.linkedin.com/in/galal-hamouda/"
+          target="_blank"
+          rel="noopener"
+        >
+          💼 LinkedIn
+        </a>
+
+
+        <a
+          class="social twitter"
+          href="https://x.com/hamouda_galal"
+          target="_blank"
+          rel="noopener"
+        >
+          𝕏 X
+        </a>
+
+
+        <a
+          class="social phone"
+          href="tel:01124813919"
+        >
+          📞 01124813919
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ==================================================
+       FOOTER
+  =================================================== -->
+
+  <footer>
+
+    <p>
+      Designed, Developed & Implemented by
+    </p>
+
+    <p class="developer">
+      Eng. Galal Hamouda
+    </p>
+
+    <p>
+      © 2026 All Rights Reserved
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
