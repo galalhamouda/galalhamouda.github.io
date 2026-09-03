@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -26,6 +27,7 @@
       --muted: #6b7280;
       --white: #ffffff;
       --border: #e5e7eb;
+      --success: #15803d;
     }
 
     body {
@@ -108,7 +110,7 @@
 
     .container {
       width: 100%;
-      max-width: 920px;
+      max-width: 1000px;
       margin: -20px auto 50px;
       padding: 0 15px;
       position: relative;
@@ -203,7 +205,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
     }
 
@@ -258,39 +260,150 @@
     }
 
     /* =========================
+       PROJECTS
+    ========================== */
+
+    .project-icon {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    /* =========================
        CERTIFICATES
     ========================== */
 
-    .certificate {
+    .certificate-controls {
+      margin-bottom: 22px;
+    }
+
+    .certificate-search {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+
+    .certificate-search:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.10);
+    }
+
+    .filter-buttons {
       display: flex;
-      align-items: center;
-      gap: 15px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      border: 1px solid #dbe4f0;
+      background: #f8fafc;
+      color: var(--primary);
+      padding: 8px 13px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .certificate-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .certificate-top {
+      padding: 20px 20px 12px;
     }
 
     .certificate-icon {
-      width: 58px;
-      height: 58px;
-      min-width: 58px;
+      width: 55px;
+      height: 55px;
       border-radius: 14px;
       background: #eaf2ff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
-    }
-
-    .certificate-info {
-      flex: 1;
+      font-size: 27px;
+      margin-bottom: 12px;
     }
 
     .certificate-info h3 {
       font-size: 16px;
       color: var(--primary);
+      margin-bottom: 6px;
     }
 
-    .certificate-info p {
+    .certificate-info .issuer {
       color: var(--muted);
       font-size: 13px;
+      min-height: 42px;
+    }
+
+    .certificate-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .certificate-year {
+      display: inline-block;
+      background: #eef4ff;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .certificate-category {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 9px;
+      border-radius: 15px;
+      font-size: 11px;
+    }
+
+    .certificate-footer {
+      padding: 0 20px 20px;
+    }
+
+    .certificate-footer .btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .certificate-count {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 30px 15px;
+      color: var(--muted);
+      background: #f8fafc;
+      border-radius: 15px;
+      border: 1px dashed var(--border);
     }
 
     /* =========================
@@ -426,6 +539,10 @@
         grid-template-columns: 1fr;
       }
 
+      .filter-buttons {
+        justify-content: center;
+      }
+
     }
 
   </style>
@@ -443,14 +560,6 @@
 
     <div class="profile-wrapper">
 
-      <!--
-        ضع صورتك هنا
-        اسم الصورة يجب أن يكون:
-        profile.jpg
-
-        وتكون في نفس مكان index.html
-      -->
-
       <img
         class="profile-img"
         src="profile.jpg"
@@ -459,16 +568,13 @@
 
     </div>
 
-
     <h1>
       م. جلال حمودة
     </h1>
 
-
     <h2>
       HSE & Administrative Security
     </h2>
-
 
     <p class="tagline">
       HSE • Administrative Security • HR Systems • AppSheet • Digital Solutions
@@ -519,9 +625,7 @@
         ⭐ مجالات العمل الرئيسية
       </h2>
 
-
       <div class="highlights">
-
 
         <div class="highlight">
 
@@ -573,7 +677,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -590,60 +693,22 @@
         💼 مجالات الخبرة
       </h2>
 
-
       <div class="skills">
 
-        <span class="skill">
-          HSE Management
-        </span>
-
-        <span class="skill">
-          Occupational Safety
-        </span>
-
-        <span class="skill">
-          Environmental Management
-        </span>
-
-        <span class="skill">
-          Administrative Security
-        </span>
-
-        <span class="skill">
-          Security Systems
-        </span>
-
-        <span class="skill">
-          HR Systems
-        </span>
-
-        <span class="skill">
-          Digital Transformation
-        </span>
-
-        <span class="skill">
-          AppSheet
-        </span>
-
-        <span class="skill">
-          Google Sheets
-        </span>
-
-        <span class="skill">
-          Google Apps Script
-        </span>
-
-        <span class="skill">
-          Excel / VBA
-        </span>
-
-        <span class="skill">
-          ISO 45001
-        </span>
-
-        <span class="skill">
-          ISO 14001
-        </span>
+        <span class="skill">HSE Management</span>
+        <span class="skill">Occupational Safety</span>
+        <span class="skill">Environmental Management</span>
+        <span class="skill">Administrative Security</span>
+        <span class="skill">Security Systems</span>
+        <span class="skill">HR Systems</span>
+        <span class="skill">Digital Transformation</span>
+        <span class="skill">AppSheet</span>
+        <span class="skill">Google Sheets</span>
+        <span class="skill">Google Apps Script</span>
+        <span class="skill">Excel / VBA</span>
+        <span class="skill">ISO 9001</span>
+        <span class="skill">ISO 45001</span>
+        <span class="skill">ISO 14001</span>
 
       </div>
 
@@ -661,11 +726,8 @@
         🚀 المشروعات والأنظمة
       </h2>
 
-
       <div class="cards">
 
-
-        <!-- HSE -->
 
         <div class="card">
 
@@ -685,9 +747,6 @@
         </div>
 
 
-
-        <!-- SECURITY -->
-
         <div class="card">
 
           <div class="card-icon">
@@ -705,9 +764,6 @@
 
         </div>
 
-
-
-        <!-- HR -->
 
         <div class="card">
 
@@ -727,9 +783,6 @@
         </div>
 
 
-
-        <!-- LEAVE SYSTEM -->
-
         <div class="card">
 
           <div class="card-icon">
@@ -745,8 +798,6 @@
             وبدل الورديات، مع مسارات موافقة وإشعارات.
           </p>
 
-          <!-- ضع رابط AppSheet هنا -->
-
           <a
             href="#"
             class="btn"
@@ -757,9 +808,6 @@
 
         </div>
 
-
-
-        <!-- NOTIFICATIONS -->
 
         <div class="card">
 
@@ -779,9 +827,6 @@
         </div>
 
 
-
-        <!-- DASHBOARDS -->
-
         <div class="card">
 
           <div class="card-icon">
@@ -799,7 +844,6 @@
 
         </div>
 
-
       </div>
 
     </section>
@@ -813,28 +857,131 @@
     <section class="section">
 
       <h2 class="section-title">
-        📜 الشهادات
+        📜 الشهادات والدورات
       </h2>
 
 
-      <div class="cards">
+      <div class="certificate-controls">
+
+        <input
+          type="text"
+          id="certificateSearch"
+          class="certificate-search"
+          placeholder="🔎 ابحث باسم الشهادة أو الجهة..."
+          onkeyup="filterCertificates()"
+        >
+
+        <div class="filter-buttons">
+
+          <button class="filter-btn active" onclick="filterCategory('all', this)">
+            الكل
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('iso', this)">
+            ISO
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('hse', this)">
+            HSE والسلامة
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('training', this)">
+            التدريب
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('leadership', this)">
+            القيادة والتطوير
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('petroleum', this)">
+            البترول والجيولوجيا
+          </button>
+
+          <button class="filter-btn" onclick="filterCategory('management', this)">
+            الإدارة والتسويق
+          </button>
+
+        </div>
+
+      </div>
 
 
-        <div class="card certificate">
+      <div class="cards" id="certificatesGrid">
 
-          <div class="certificate-icon">
-            📜
+
+        <!-- ================= ISO ================= -->
+
+
+        <div class="card certificate-card" data-category="iso">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🏆
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                ISO 9001
+              </h3>
+
+              <p class="issuer">
+                Quality Management System
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">ISO</span>
+                <span class="certificate-year">ISO</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="certificate-info">
+          <div class="certificate-footer">
 
-            <h3>
-              ISO 45001:2018
-            </h3>
+            <a
+              href="certificates/iso9001.pdf"
+              class="btn"
+              target="_blank"
+            >
+              عرض الشهادة
+            </a>
 
-            <p>
-              Occupational Health & Safety
-            </p>
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="iso">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🏆
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                ISO 45001:2018
+              </h3>
+
+              <p class="issuer">
+                Occupational Health & Safety Management System
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">ISO</span>
+                <span class="certificate-year">ISO</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
 
             <a
               href="certificates/iso45001.pdf"
@@ -849,22 +996,34 @@
         </div>
 
 
+        <div class="card certificate-card" data-category="iso">
 
-        <div class="card certificate">
+          <div class="certificate-top">
 
-          <div class="certificate-icon">
-            📜
+            <div class="certificate-icon">
+              🏆
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                ISO 14001:2015
+              </h3>
+
+              <p class="issuer">
+                Environmental Management System
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">ISO</span>
+                <span class="certificate-year">ISO</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="certificate-info">
-
-            <h3>
-              ISO 14001:2015
-            </h3>
-
-            <p>
-              Environmental Management
-            </p>
+          <div class="certificate-footer">
 
             <a
               href="certificates/iso14001.pdf"
@@ -880,27 +1039,324 @@
 
 
 
-        <div class="card certificate">
+        <!-- ================= HSE ================= -->
 
-          <div class="certificate-icon">
-            📜
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🦺
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                IOSH Managing Safely
+              </h3>
+
+              <p class="issuer">
+                Institution of Occupational Safety and Health
+                in association with Gulf Technical & Safety Training Centre LLC
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="certificate-info">
+          <div class="certificate-footer">
 
-            <h3>
-              IOSH Managing Safely
-            </h3>
+            <a href="certificates/iosh-managing-safely.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
 
-            <p>
-              Occupational Safety
-            </p>
+          </div>
 
-            <a
-              href="certificates/iosh.pdf"
-              class="btn"
-              target="_blank"
-            >
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🚑
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                First Aid, CPR and Basic Life Support (BLS)
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy for Safety, Occupational Health,
+                Environment, Quality & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2021</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/first-aid-cpr-bls.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🔥
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Fire Marshal Training Course
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2021</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/fire-marshal.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              ⚠️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Workplace Hazards Identification - Risk Assessment
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2021</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/risk-assessment.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🚨
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Emergency and Evacuation Procedures - Plans
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2021</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/emergency-evacuation.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🏗️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                OSHA Construction Industry Safety & Health (30-Hour)
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2020</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/osha-construction-30h.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🏭
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                OSHA General Industry Safety & Health (30-Hour)
+              </h3>
+
+              <p class="issuer">
+                Gulf Academy & TIMS
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2020</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/osha-general-industry-30h.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="hse">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🚑
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                First Aid Training Course
+              </h3>
+
+              <p class="issuer">
+                Egyptian Syndicate of Scientific Professions
+                (Port Said) & Sawaed El-Suez Association
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">HSE</span>
+                <span class="certificate-year">2019</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/first-aid-2019.pdf"
+               class="btn"
+               target="_blank">
               عرض الشهادة
             </a>
 
@@ -910,27 +1366,41 @@
 
 
 
-        <div class="card certificate">
+        <!-- ================= TRAINING ================= -->
 
-          <div class="certificate-icon">
-            📜
+
+        <div class="card certificate-card" data-category="training">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🎓
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Train-The-Trainer Program: The Novice Trainer Level
+              </h3>
+
+              <p class="issuer">
+                Edraak بالتعاون مع IBCT
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Training</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="certificate-info">
+          <div class="certificate-footer">
 
-            <h3>
-              OSHA
-            </h3>
-
-            <p>
-              Occupational Safety
-            </p>
-
-            <a
-              href="certificates/osha.pdf"
-              class="btn"
-              target="_blank"
-            >
+            <a href="certificates/train-the-trainer-novice.pdf"
+               class="btn"
+               target="_blank">
               عرض الشهادة
             </a>
 
@@ -939,6 +1409,509 @@
         </div>
 
 
+        <div class="card certificate-card" data-category="training">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              👨‍🏫
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                تدريب المدربين - TOT
+              </h3>
+
+              <p class="issuer">
+                إدراك بالتعاون مع المجلس الدولي للمدربين المعتمدين IBCT
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Training</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/tot.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ================= LEADERSHIP ================= -->
+
+
+        <div class="card certificate-card" data-category="leadership">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              👨‍💼
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                أساسيات القيادة
+              </h3>
+
+              <p class="issuer">
+                COURSSAT.com
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Leadership</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/leadership-basics.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="leadership">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🎤
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                التحدث أمام العامة
+              </h3>
+
+              <p class="issuer">
+                COURSSAT.com
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Leadership</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/public-speaking.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="leadership">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              ⭐
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                كيف تصنع البراند الشخصي؟
+              </h3>
+
+              <p class="issuer">
+                COURSSAT.com
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Leadership</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/personal-brand.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="leadership">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🔄
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                إدارة التغيير
+              </h3>
+
+              <p class="issuer">
+                COURSSAT.com
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Leadership</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/change-management.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="leadership">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🧠
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                إدارة الضغط النفسي
+              </h3>
+
+              <p class="issuer">
+                COURSSAT.com
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Leadership</span>
+                <span class="certificate-year">2025</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/stress-management.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ================= PETROLEUM ================= -->
+
+
+        <div class="card certificate-card" data-category="petroleum">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🛢️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                GTI5 Course (Petrophysics & Well Logging)
+              </h3>
+
+              <p class="issuer">
+                جامعة قناة السويس بالتعاون مع SEG-SCU-SC
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Petroleum</span>
+                <span class="certificate-year">2018</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/gti5-petrophysics-well-logging.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="petroleum">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🛢️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Summer Training Certificate - Exploration Department
+              </h3>
+
+              <p class="issuer">
+                شركة أمل للبترول AMAPETCO
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Petroleum</span>
+                <span class="certificate-year">2019</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/amapetco-exploration.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="petroleum">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              ⚙️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Summer Training Certificate - Operations Dept. / Port Said
+              </h3>
+
+              <p class="issuer">
+                الشركة الفرعونية للبترول PhPC
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Petroleum</span>
+                <span class="certificate-year">2019</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/phpc-operations-port-said.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="petroleum">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🏭
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Certificate of Attending Summer Training
+                (Operations - Fields)
+              </h3>
+
+              <p class="issuer">
+                شركة قارون للبترول QPC
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Petroleum</span>
+                <span class="certificate-year">2019</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/qpc-operations-fields.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="card certificate-card" data-category="petroleum">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              🛢️
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                شهادة تدريب صيفي - الاتفاقيات والاستكشاف
+              </h3>
+
+              <p class="issuer">
+                شركة جنوب الوادي المصرية القابضة للبترول GANOPE
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Petroleum</span>
+                <span class="certificate-year">2019</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/ganope-exploration.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ================= MANAGEMENT ================= -->
+
+
+        <div class="card certificate-card" data-category="management">
+
+          <div class="certificate-top">
+
+            <div class="certificate-icon">
+              💰
+            </div>
+
+            <div class="certificate-info">
+
+              <h3>
+                Basics of Pricing
+              </h3>
+
+              <p class="issuer">
+                Udemy — المحاضر: إيهاب مسلم
+              </p>
+
+              <div class="certificate-meta">
+                <span class="certificate-category">Management</span>
+                <span class="certificate-year">2024</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="certificate-footer">
+
+            <a href="certificates/basics-of-pricing.pdf"
+               class="btn"
+               target="_blank">
+              عرض الشهادة
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="no-results" id="noResults">
+        لا توجد شهادات مطابقة لعملية البحث.
+      </div>
+
+
+      <div class="certificate-count" id="certificateCount">
+        إجمالي الشهادات والدورات: 24
       </div>
 
     </section>
@@ -958,13 +1931,6 @@
       <p>
         للاطلاع على السيرة الذاتية والخبرات المهنية
       </p>
-
-
-      <!--
-        ضع ملف السيرة الذاتية في نفس مكان index.html
-        باسم:
-        CV.pdf
-      -->
 
       <a
         href="CV.pdf"
@@ -988,9 +1954,7 @@
         🔗 تواصل معي
       </h2>
 
-
       <div class="social-links">
-
 
         <a
           class="social facebook"
@@ -1029,7 +1993,6 @@
           📞 01124813919
         </a>
 
-
       </div>
 
     </section>
@@ -1060,5 +2023,99 @@
   </footer>
 
 
+
+  <!-- ==================================================
+       CERTIFICATE FILTER SCRIPT
+  =================================================== -->
+
+  <script>
+
+    let currentCategory = "all";
+
+    function filterCategory(category, button) {
+
+      currentCategory = category;
+
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+      button.classList.add("active");
+
+      filterCertificates();
+    }
+
+
+    function filterCertificates() {
+
+      const searchInput =
+        document.getElementById("certificateSearch");
+
+      const search =
+        searchInput.value.toLowerCase().trim();
+
+      const cards =
+        document.querySelectorAll(".certificate-card");
+
+      let visibleCount = 0;
+
+
+      cards.forEach(card => {
+
+        const text =
+          card.innerText.toLowerCase();
+
+        const category =
+          card.getAttribute("data-category");
+
+        const matchesSearch =
+          text.includes(search);
+
+        const matchesCategory =
+          currentCategory === "all" ||
+          category === currentCategory;
+
+
+        if (matchesSearch && matchesCategory) {
+
+          card.style.display = "flex";
+          visibleCount++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      const noResults =
+        document.getElementById("noResults");
+
+      const count =
+        document.getElementById("certificateCount");
+
+
+      if (visibleCount === 0) {
+
+        noResults.style.display = "block";
+
+      } else {
+
+        noResults.style.display = "none";
+
+      }
+
+
+      count.innerText =
+        "الشهادات الظاهرة: " + visibleCount;
+
+    }
+
+  </script>
+
+
 </body>
 </html>
+```
